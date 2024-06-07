@@ -10,10 +10,10 @@ class Livre extends Model
     use HasFactory;
 
     public function categorie(){
-        return $this->belongsTo(Categorie::class, 'categorie_id');
+        return $this->belongsTo(Categorie::class);
     }
 
     public function rayon(){
-        return $this->belongsTo(Rayon::class,'rayon_id');
+        return $this->belongsTo(Rayon::class);
     }
 }
