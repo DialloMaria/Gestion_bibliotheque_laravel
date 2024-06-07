@@ -30,7 +30,7 @@
                         <p class="card-text"> {{$categories->description}}</p>
                         <div class="text-right">
                             <button class="btn btn-sm btn-info">Voir</button>
-                            <button class="btn btn-sm btn-warning">Modifier</button>
+                            <a href="modifierCategorie/{{$categories->id}}"><button class="btn btn-sm btn-warning">Modifier</button></a>
                            <a href="supprimerCategorie/{{$categories->id}}"><button class="btn btn-sm btn-danger">Supprimer</button></a> 
                         </div>
                     </div>
