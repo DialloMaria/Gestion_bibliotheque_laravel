@@ -38,3 +38,6 @@ Route::get('listeRayon', [RayonController::class, 'ListeRayon']);
 
 Route::get('supprimerRayon{id}', [RayonController::class, 'SupprimerRayon']);
 
+Route::get('modifierRayon/{id}', [RayonController::class, 'modifierRayon']);
+
+Route::post('modifierRayon/{id}/traitement', [RayonController::class, 'ModifierRayon_Traitement']);

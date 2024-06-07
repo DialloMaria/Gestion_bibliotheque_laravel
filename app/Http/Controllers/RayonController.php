@@ -36,4 +36,24 @@ class RayonController extends Controller
         $rayon->delete();
         return back();
     }
+
+    public function modifierRayon($id){
+        $rayon=Rayon::find($id);
+        return view('/rayons/modifierRayon', compact('rayon'));
+    }
+
+    public function ModifierRayon_Traitement(Request $request){
+
+        $request->validate([
+            'libelle'=>'required',
+            'partie'=>'required',
+        ]);
+
+        $categorie=Rayon::find($request->id);
+        $categorie->libelle = $request->libelle;
+        $categorie->partie = $request->partie;
+
+        $categorie->update();
+        return redirect('/listeRayon');
+    }
 }

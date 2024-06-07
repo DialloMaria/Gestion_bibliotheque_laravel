@@ -10,7 +10,7 @@
     <div class="contenaire">
         <div class="card-contenaire">
             <div class="row">
-                <h2>LISTE DES CATEGORIES</h2>
+                <h2></h2>
                 @foreach ($rayon as $rayons)
                 <div class="col-md-4">
                     <div class="card">
