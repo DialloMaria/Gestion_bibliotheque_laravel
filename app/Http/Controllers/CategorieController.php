@@ -31,4 +31,10 @@ class CategorieController extends Controller
         $categorie= Categorie::all();
         return view('/categories/listeCategorie', compact('categorie'));
     }
+
+    public function SupprimerCategorie($id){
+        $categorie=Categorie::find($id);
+        $categorie->delete();
+        return back();
+    }
 }

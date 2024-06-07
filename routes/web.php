@@ -14,3 +14,5 @@ Route::get('ajouterCategorie',[CategorieController::class, 'AjouterCategorie']);
 Route::post('ajouterCategorie/traitement',[CategorieController::class, 'AjouterCategorie_Traitement']);
 
 Route::get('listeCategorie', [CategorieController::class, 'ListeCategorie']);
+
+Route::get('supprimerCategorie/{id}', [CategorieController::class, 'SupprimerCategorie']);

@@ -11,11 +11,31 @@
     @foreach ($categorie as $categories)
         
     @endforeach
-    <div class="card" style="width: 18rem;">
+    {{-- <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title"> {{$categories->libelle}} </h5>
           <p class="card-text"> {{$categories->description}} </p>
           <a href="#" class="btn btn-primary"> {{$categories->created_at}} </a>
+        </div>
+      </div> --}}
+      <div class="contenaire">
+        <div class="card-contenaire">
+            <h2>LISTE DES CATEGORIES</h2>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        {{$categories->libelle}}
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text"> {{$categories->description}}</p>
+                        <div class="text-right">
+                            <button class="btn btn-sm btn-info">Voir</button>
+                            <button class="btn btn-sm btn-warning">Modifier</button>
+                           <a href="supprimerCategorie/{{$categories->id}}"><button class="btn btn-sm btn-danger">Supprimer</button></a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
 </body>
