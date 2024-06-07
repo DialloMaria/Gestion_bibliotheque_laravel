@@ -26,4 +26,9 @@ class CategorieController extends Controller
         return redirect('/ajouterCategorie');
 
     }
+
+    public function ListeCategorie(){
+        $categorie= Categorie::all();
+        return view('/categories/listeCategorie', compact('categorie'));
+    }
 }

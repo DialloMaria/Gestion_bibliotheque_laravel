@@ -13,4 +13,4 @@ Route::get('ajouterCategorie',[CategorieController::class, 'AjouterCategorie']);
 //la route pour traiter l'ajout des categories
 Route::post('ajouterCategorie/traitement',[CategorieController::class, 'AjouterCategorie_Traitement']);
 
-
+Route::get('listeCategorie', [CategorieController::class, 'ListeCategorie']);
