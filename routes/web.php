@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RayonController;
 use App\Http\Controllers\CategorieController;
 
 // Route::get('/', function () {
@@ -24,3 +25,11 @@ Route::get('modifierCategorie/{id}', [CategorieController::class, 'modifierCateg
 
 // Route pour traiter la modification de la catégorie
 Route::post('modifierCategorie/{id}/traitement', [CategorieController::class, 'ModifierCategorie_Traitement']);
+
+
+
+
+
+Route::get('ajouterRayon', [RayonController::class, 'AjouterRayon']);
+
+Route::post('ajouterRayon/traitement',[RayonController::class, 'AjouterRayon_Traitement']);
