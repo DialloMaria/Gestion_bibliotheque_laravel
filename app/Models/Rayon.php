@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Rayon extends Model
 {
     use HasFactory;
+
+    public function livre(){
+        return $this->hasMany(Livre::class);
+    }
 }
