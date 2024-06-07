@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreignId('rayon_id')->constrained('rayons')->onDelete('cascade');
             $table->boolean('disponibilite')->default(true);
             $table->timestamps();
+            
         });
     }
 
