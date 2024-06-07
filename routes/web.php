@@ -33,3 +33,7 @@ Route::post('modifierCategorie/{id}/traitement', [CategorieController::class, 'M
 Route::get('ajouterRayon', [RayonController::class, 'AjouterRayon']);
 
 Route::post('ajouterRayon/traitement',[RayonController::class, 'AjouterRayon_Traitement']);
+
+Route::get('listeRayon', [RayonController::class, 'ListeRayon']);
+
+

@@ -24,6 +24,10 @@ class RayonController extends Controller
         
         $categorie->save();
         return redirect('/ajouterRayon');
+    }
 
+    public function ListeRayon(){
+        $rayon= Rayon::all();
+        return view('/rayons/listeRayon', compact('rayon'));
     }
 }
