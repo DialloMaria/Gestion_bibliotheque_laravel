@@ -36,4 +36,5 @@ Route::post('ajouterRayon/traitement',[RayonController::class, 'AjouterRayon_Tra
 
 Route::get('listeRayon', [RayonController::class, 'ListeRayon']);
 
+Route::get('supprimerRayon{id}', [RayonController::class, 'SupprimerRayon']);
 

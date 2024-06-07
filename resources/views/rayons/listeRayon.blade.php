@@ -22,7 +22,7 @@
                             <div class="text-right">
                                 <button class="btn btn-sm btn-info">Voir</button>
                                 <a href="modifierRayon/{{$rayons->id}}"><button class="btn btn-sm btn-warning">Modifier</button></a>
-                            <a href="supprimerRayon/{{$rayons->id}}"><button class="btn btn-sm btn-danger">Supprimer</button></a> 
+                            <a href="supprimerRayon{{$rayons->id}}"><button class="btn btn-sm btn-danger">Supprimer</button></a> 
                             </div>
                         </div>
                     </div>

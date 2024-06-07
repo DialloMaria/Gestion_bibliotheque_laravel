@@ -30,4 +30,10 @@ class RayonController extends Controller
         $rayon= Rayon::all();
         return view('/rayons/listeRayon', compact('rayon'));
     }
+
+    public function SupprimerRayon($id){
+        $rayon=Rayon::find($id);
+        $rayon->delete();
+        return back();
+    }
 }
