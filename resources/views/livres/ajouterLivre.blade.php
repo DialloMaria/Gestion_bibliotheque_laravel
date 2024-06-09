@@ -115,6 +115,7 @@
                         <option value="0">Indisponible</option>
                     </select>
                 </div>h
+                
             </div>
             <div class="row mb-3">
                 <div class="col-md-12">

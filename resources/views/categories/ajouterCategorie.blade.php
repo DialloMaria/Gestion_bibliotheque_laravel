@@ -64,7 +64,7 @@
                         <option value="sante-bien-etre">Santé et bien-être</option>
                         <option value="sport-fitness">Sport et fitness</option>
                         <option value="maison-bricolage">Maison et bricolage</option>
-                        <option value="voyages-guides-touristiques">Voyages et guides</option>
+                        <option value="voyages-guides-touristiques">Maison et bricolage</option>
                     </select>
                 </div>
                 <div class="mb-3">
