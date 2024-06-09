@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LivreController;
 use App\Http\Controllers\RayonController;
 use App\Http\Controllers\CategorieController;
 
@@ -41,3 +42,13 @@ Route::get('supprimerRayon{id}', [RayonController::class, 'SupprimerRayon']);
 Route::get('modifierRayon/{id}', [RayonController::class, 'modifierRayon']);
 
 Route::post('modifierRayon/{id}/traitement', [RayonController::class, 'ModifierRayon_Traitement']);
+
+
+
+
+Route::get('ajouterLivre', [LivreController::class, 'AjouterLivre']);
+
+Route::post('ajouterLivre/traitement',[LivreController::class, 'AjouterLivre_Traitement']);
+
+Route::get('index', [LivreController::class, 'index']);
+

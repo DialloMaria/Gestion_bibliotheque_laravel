@@ -40,9 +40,32 @@
         <div class="form-container">
             <form action="ajouterCategorie/traitement" method="POST">
                 @csrf
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <label for="libelle" class="form-label">Libelle</label>
                     <input type="text" class="form-control" id="libelle" placeholder="Libelle" name="libelle" >
+                </div> --}}
+
+                <div class="col-md-6">
+                    <label for="libelle" class="form-label">Libelle</label>
+                    <select class="form-control" id="libelle" name="libelle" required>
+                        <option value="" disabled selected>Choisisser une categorie</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="roman">Roman</option>
+                        <option value="developpement-personnel">Développement personnel</option>
+                        <option value="jeunesse">Jeunesse</option>
+                        <option value="education">Éducation</option>
+                        <option value="guides-revision">Guides de révision</option>
+                        <option value="arts-loisirs">Arts et Loisirs</option>
+                        <option value="art-design">Art et design</option>
+                        <option value="contes">Contes</option>
+                        <option value="cuisine-gastronomie">Cuisine et gastronomie</option>
+                        <option value="jardinage">Jardinage</option>
+                        <option value="vie-pratique">Vie Pratique</option>
+                        <option value="sante-bien-etre">Santé et bien-être</option>
+                        <option value="sport-fitness">Sport et fitness</option>
+                        <option value="maison-bricolage">Maison et bricolage</option>
+                        <option value="voyages-guides-touristiques">Voyages et guides</option>
+                    </select>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
