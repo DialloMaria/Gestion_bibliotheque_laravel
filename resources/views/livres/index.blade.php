@@ -212,7 +212,7 @@
                         <h5 class="card-title"><strong>{{ $livre->titre }}</strong></h5>
                         {{-- <a href="/livres/{{ $livre->id }}" class="btn btn-custom-details">Détails</a> --}}
                          <div class="text-center">
-                        <a href="/livres/{{ $livre->id }}" class="btn btn-custom-details">
+                        <a href="/detail/{{ $livre->id }}" class="btn btn-custom-details">
                             <i class="fas fa-info-circle"></i> Détails
                         </a>
                         <a href="/modifierLivre/{{ $livre->id }}" class="btn btn-custom btn-modifier"><i class="bi bi-pencil-square"></i>Modifier</a>

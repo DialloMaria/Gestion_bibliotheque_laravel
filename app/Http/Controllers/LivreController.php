@@ -79,4 +79,8 @@ class LivreController extends Controller
         $livre->delete();
         return redirect('/');
     }
+    public function DetailsLivre($id){
+        $livre=Livre::findOrFail($id);
+        return view('livres.detail', compact('livre'));
+    }
 }

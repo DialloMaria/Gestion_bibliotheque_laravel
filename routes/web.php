@@ -58,6 +58,6 @@ Route::get('/', [LivreController::class, 'index']);
 
 Route::get('supprimerLivre/{id}', [LivreController::class, 'SupprimerLivre']);
 
-
+Route::get('detail/{id}', [LivreController::class, 'DetailsLivre']);
 
 
