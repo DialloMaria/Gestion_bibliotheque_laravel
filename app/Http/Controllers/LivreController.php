@@ -70,7 +70,8 @@ class LivreController extends Controller
     public function index()
     {
         $livres = Livre::all();
-        return view('livres.index', compact('livres'));
+        $categories = Categorie::all(); 
+        return view('livres.index', compact('livres','categories'));
     }
 
     public function SupprimerLivre($id){
