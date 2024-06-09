@@ -44,9 +44,38 @@ class LivreController extends Controller
         return redirect('/ajouterLivre');
     }
 
+    public function ModifierLivre($id){
+        $livre = Livre::find($id);
+        $categories = Categorie::all(); 
+        $rayons = Rayon::all();
+        return view('livres.modifierLivre', compact('livre', 'categories', 'rayons'));
+    }
+    
+    public function ModifierLivre_Traitement(Request $request){
+        $livre = Livre::find($request->id);
+        $livre->titre = $request->titre;
+        $livre->nombre_page = $request->nombre_page;
+        $livre->auteur = $request->auteur;
+        $livre->isbn = $request->isbn;
+        $livre->editeur = $request->editeur; 
+        $livre->categorie_id = $request->categorie_id;
+        $livre->rayon_id = $request->rayon_id;
+        $livre->disponibilite = $request->disponibilite;
+        $livre->image = $request->image;
+    
+        $livre->update();
+        return redirect('/');
+    }
 
-    // public function listeLivres(){
-       
-    //     return view('/livres/ajouterLivre', );
-    // }
+    public function index()
+    {
+        $livres = Livre::all();
+        return view('livres.index', compact('livres'));
+    }
+
+    public function SupprimerLivre($id){
+        $livre=Livre::find($id);
+        $livre->delete();
+        return redirect('/');
+    }
 }

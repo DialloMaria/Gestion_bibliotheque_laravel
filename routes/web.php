@@ -50,5 +50,14 @@ Route::get('ajouterLivre', [LivreController::class, 'AjouterLivre']);
 
 Route::post('ajouterLivre/traitement',[LivreController::class, 'AjouterLivre_Traitement']);
 
-Route::get('index', [LivreController::class, 'index']);
+Route::get('/modifierLivre/{id}', [LivreController::class, 'ModifierLivre'])->name('modifierLivre');
+
+Route::post('/modifierLivre/traitement', [LivreController::class, 'ModifierLivre_Traitement'])->name('modifierLivreTraitement');
+
+Route::get('/', [LivreController::class, 'index']);
+
+Route::get('supprimerLivre/{id}', [LivreController::class, 'SupprimerLivre']);
+
+
+
 
