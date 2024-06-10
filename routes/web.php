@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LivreController;
 use App\Http\Controllers\RayonController;
 use App\Http\Controllers\CategorieController;
@@ -60,4 +61,9 @@ Route::get('supprimerLivre/{id}', [LivreController::class, 'SupprimerLivre']);
 
 Route::get('detail/{id}', [LivreController::class, 'DetailsLivre']);
 
+Route::get('/login', [AuthController::class, 'login']);
+
+Route::post('/authentification', [AuthController::class, 'authentification']);
+
+Route::get('/logout', [AuthController::class, 'logout']);
 
