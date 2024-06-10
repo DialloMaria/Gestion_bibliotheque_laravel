@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Livre;
 use App\Models\Rayon;
 use App\Models\Categorie;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class LivreController extends Controller
 {
@@ -69,6 +71,16 @@ class LivreController extends Controller
 
     public function index()
     {
+
+
+         //  Cette ligne de code nous a permis de créer un utilisateur
+
+        //  User::create([
+        //     'name' => 'Rama',
+        //     'email' => 'ram@gmail.com',
+        //     'password' => Hash::make('00000')
+        // ]); 
+
         $livres = Livre::all();
         $categories = Categorie::all(); 
         return view('livres.index', compact('livres','categories'));
@@ -82,5 +94,9 @@ class LivreController extends Controller
     public function DetailsLivre($id){
         $livre=Livre::findOrFail($id);
         return view('livres.detail', compact('livre'));
+    }
+
+    public function dashbord(){
+        return view('livres/dashbord');
     }
 }

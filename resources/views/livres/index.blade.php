@@ -89,6 +89,7 @@
             <a class="navbar-brand" href="#">
                <h1 style="color:#9e4e2e;" ><strong> KITABI</strong></h1>
             </a>
+        
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -104,7 +105,18 @@
                         <a class="nav-link" href="#">Catégorie</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn-signup" href="#">S'inscrire</a>
+                        <a class="nav-link btn-signup" href="login">S'inscrire</a>
+                    </li>
+                    <li>
+                        
+                        @if (Auth::user())
+                        {{Auth::user()->name}}
+                        <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-link">Déconnexion</button>
+                        </form>
+                        @endif
                     </li>
                 </ul>
             </div>

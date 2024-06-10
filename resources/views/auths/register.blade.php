@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Connexion</title>
+    <title>Inscription</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -17,7 +17,7 @@
             align-items: center;
             height: 100vh;
         }
-        .login-container {
+        .register-container {
             background: white;
             padding: 30px;
             border-radius: 10px;
@@ -25,7 +25,7 @@
             max-width: 400px;
             width: 100%;
         }
-        .login-container h1 {
+        .register-container h1 {
             color: #b15633;
             font-size: 2rem;
             margin-bottom: 20px;
@@ -58,31 +58,31 @@
             transition: color 0.3s;
         }
         .form-footer a:hover {
-            color: #ff6137;   
+            color: #ff6137;
         }
     </style>
 </head>
 <body>
 
-<div class="login-container">
-    <h1>Connexion</h1>
+<div class="register-container">
+    <h1>Inscription</h1>
     @foreach ($errors->all() as $error)
         <div class="alert alert-danger">{{ $error }}</div>
     @endforeach
-    <form method="POST" action="/login_traitement">
+    <form method="POST" action="/authentification">
         @csrf
         <div class="mb-3">
-            <input type="email" class="form-control" id="email" placeholder="Adresse email" name="email" value="{{ old('email') }}"  required>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Nom complet" value="{{ old('name') }}" required>
         </div>
         <div class="mb-3">
-            <input type="password" class="form-control" id="password" placeholder="Mot de passe" name="password" value="{{ old('password') }}" required>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Adresse email" value="{{ old('email') }}" required>
         </div>
-        <button type="submit" class="btn btn-custom">Se connecter</button>
-        <div class="form-footer">
-            <a href="#">Mot de passe oublié?</a>
+        <div class="mb-3">
+            <input type="password" class="form-control" name="password" id="password" placeholder="Mot de passe" required>
         </div>
+        <button type="submit" class="btn btn-custom">S'inscrire</button>
         <div class="form-footer">
-            <p>Pas encore inscrit? <a href="/register">Créer un compte</a></p>
+            <p>Déjà inscrit? <a href="/login">Se connecter</a></p>
         </div>
     </form>
 </div>

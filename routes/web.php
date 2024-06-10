@@ -46,7 +46,6 @@ Route::post('modifierRayon/{id}/traitement', [RayonController::class, 'ModifierR
 
 
 
-
 Route::get('ajouterLivre', [LivreController::class, 'AjouterLivre']);
 
 Route::post('ajouterLivre/traitement',[LivreController::class, 'AjouterLivre_Traitement']);
@@ -61,9 +60,28 @@ Route::get('supprimerLivre/{id}', [LivreController::class, 'SupprimerLivre']);
 
 Route::get('detail/{id}', [LivreController::class, 'DetailsLivre']);
 
-Route::get('/login', [AuthController::class, 'login']);
+// Route::get('/login', [AuthController::class, 'login']);
 
-Route::post('/authentification', [AuthController::class, 'authentification']);
+// Route::post('/authentification', [AuthController::class, 'authentification']);
 
-Route::get('/logout', [AuthController::class, 'logout']);
+// Route::get('/logout', [AuthController::class, 'logout']);
 
+//Ces routes vont nou permettre de gerer l'authentification et le traitement des donnée de l'utilisateur
+
+
+//Cette route permet à l'utilisateur de se deconnecter
+// Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
+
+Route::get('/login', [AuthController::class , 'login']);
+
+Route::post('/login_traitement' , [AuthController::class , 'LoginTraitement' ]);
+
+Route::get('/admin' , [LivreController::class, 'dashbord'])->name('livres.dash');
+
+Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/register', [AuthController::class, 'showRegisterForm']);
+
+Route::post('/authentification', [AuthController::class, 'registe']); 

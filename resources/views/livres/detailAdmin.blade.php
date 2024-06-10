@@ -99,6 +99,20 @@
     </div>
 </nav>
 
+<div class="dropdown">
+    <button class="btn btn dropdown-toggle user-name" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        {{ auth()->user()->name }}
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+        <li>
+            <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
+                @csrf
+                <button type="submit" class="btn btn-link">Déconnexion</button>
+            </form>
+        </li>
+    </ul>
+</div>
+
 <div class="container">
     <div class="book-details">
         <img src="{{ $livre->image }}" alt="Image du livre">
