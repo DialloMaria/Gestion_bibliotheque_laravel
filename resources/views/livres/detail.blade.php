@@ -113,12 +113,12 @@
             <p><strong>Description :</strong> {{ $livre->description }}</p>
         </div>
         <div class="book-actions">
-            <a href="/modifierLivre/{{ $livre->id }}" class="btn btn-custom">
+            {{-- <a href="/modifierLivre/{{ $livre->id }}" class="btn btn-custom">
                 <i class="fas fa-edit"></i> Modifier
             </a>
             <a href="/supprimerLivre/{{ $livre->id }}" class="btn btn-custom">
                 <i class="fas fa-trash-alt"></i> Supprimer
-            </a>
+            </a> --}}
             <a href="/" class="btn btn-custom">
                 <i class="fas fa-arrow-left"></i> Retour
             </a>

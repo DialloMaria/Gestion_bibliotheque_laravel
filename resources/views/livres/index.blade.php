@@ -227,7 +227,7 @@
                         <a href="/detail/{{ $livre->id }}" class="btn btn-custom-details">
                             <i class="fas fa-info-circle"></i> Détails
                         </a>
-                        <a href="/modifierLivre/{{ $livre->id }}" class="btn btn-custom btn-modifier"><i class="bi bi-pencil-square"></i>Modifier</a>
+                        {{-- <a href="/modifierLivre/{{ $livre->id }}" class="btn btn-custom btn-modifier"><i class="bi bi-pencil-square"></i>Modifier</a> --}}
                         {{-- <a href="#" class="btn btn-custom-details">
                             <i class="fas fa-play"></i> Lire
                         </a>
@@ -240,7 +240,7 @@
             </div>
             @endforeach
         </div>
-        <a href="/ajouterLivre" class="btn btn-link mt-3">Ajouter un Nouveau Livre</a>
+        {{-- <a href="/ajouterLivre" class="btn btn-link mt-3">Ajouter un Nouveau Livre</a> --}}
     </div>
 
     <footer class="footer">
