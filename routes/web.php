@@ -58,7 +58,10 @@ Route::get('/', [LivreController::class, 'index']);
 
 Route::get('supprimerLivre/{id}', [LivreController::class, 'SupprimerLivre']);
 
-Route::get('detail/{id}', [LivreController::class, 'DetailsLivre']);
+Route::get('/description/{id}', [LivreController::class, 'Description'])->name('description'); 
+
+Route::get('detail/{id}', [LivreController::class, 'details']);
+
 
 // Route::get('/login', [AuthController::class, 'login']);
 

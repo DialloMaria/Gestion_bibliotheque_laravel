@@ -66,7 +66,7 @@ class LivreController extends Controller
         $livre->image = $request->image;
     
         $livre->update();
-        return redirect('/');
+        return redirect('/admin');
     }
 
     public function index()
@@ -89,14 +89,22 @@ class LivreController extends Controller
     public function SupprimerLivre($id){
         $livre=Livre::find($id);
         $livre->delete();
-        return redirect('/');
+        return redirect('/admin');
     }
-    public function DetailsLivre($id){
+    public function details($id){
         $livre=Livre::findOrFail($id);
         return view('livres.detail', compact('livre'));
     }
 
     public function dashbord(){
-        return view('livres/dashbord');
+        $categories = Categorie::all(); 
+        $livres = Livre::all();
+        return view('livres/dashbord', compact('categories' , 'livres'));
+    }
+
+    public function Description($id)
+    {
+        $livre = Livre::findOrFail($id);
+        return view('livres/detailAdmin', compact('livre'));
     }
 }
