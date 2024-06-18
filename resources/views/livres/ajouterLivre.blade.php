@@ -130,13 +130,13 @@
             <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>
         <div class="d-flex justify-content-center mt-3">
-            <a href="" class="btn btn-custom btn-details"><i class="bi bi-info-circle"></i>Détails</a>
+            {{-- <a href="" class="btn btn-custom btn-details"><i class="bi bi-info-circle"></i>Détails</a>
             <a href="" class="btn btn-custom btn-modifier"><i class="bi bi-pencil-square"></i>Modifier</a>
             <form action="" method="POST" style="display: inline;">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-custom btn-supprimer"><i class="bi bi-trash"></i>Supprimer</button>
-            </form>
+            </form> --}}
         </div>
         <a href="/" class="btn btn-link mt-3">Retour</a>
     </div>

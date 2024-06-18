@@ -76,8 +76,8 @@ class LivreController extends Controller
          //  Cette ligne de code nous a permis de créer un utilisateur
 
         //  User::create([
-        //     'name' => 'Rama',
-        //     'email' => 'ram@gmail.com',
+        //     'name' => 'Mariam',
+        //     'email' => 'ma@gmail.com',
         //     'password' => Hash::make('00000')
         // ]); 
 

@@ -108,7 +108,7 @@
                         <a class="nav-link btn-signup" href="login">S'inscrire</a>
                     </li>
                     <li>
-                        
+{{--                         
                         @if (Auth::user())
                         {{Auth::user()->name}}
                         <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
@@ -116,7 +116,7 @@
                             @method('DELETE')
                             <button type="submit" class="btn btn-link">Déconnexion</button>
                         </form>
-                        @endif
+                        @endif --}}
                     </li>
                 </ul>
             </div>
