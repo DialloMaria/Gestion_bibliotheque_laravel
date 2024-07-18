@@ -180,9 +180,9 @@
        {{ Auth::user()->name }}
        <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
            @csrf
-           @method('DELETE') --}}
+           @method('DELETE')
            <button type="submit" class="fas fa-sign-out-alt">Déconnexion</button>
-       {{-- </form>
+       </form>
        @endif --}}
    </div>
 

@@ -18,18 +18,18 @@ class LivreController extends Controller
     }
 
     public function AjouterLivre_Traitement(Request $request){
-        // $request->validate([
-        //     'titre' => 'required',
-        //     'nombre_page' => 'required',
-        //     'auteur' => 'required',
-        //     'isbn' => 'required',
-        //     'editeur' => 'required',
-        //     'categorie_id' => 'required',
-        //     'categorie_id' => 'required',
-        //     'rayon_id' => 'required',
-        //     'disponible' => 'required',
-        //     'image' => 'required',
-        // ]);
+        $request->validate([
+            'titre' => 'required|string|max:255',
+            'nombre_page' => 'required|integer|min:1',
+            'auteur' => 'required|string|max:255',
+            'isbn' => 'required|string|unique:livres,isbn|max:13',
+            'editeur' => 'required|string|max:255',
+            'categorie_id' => 'required|exists:categories,id',
+            'rayon_id' => 'required|exists:rayons,id',
+            'disponibilite' => 'required|boolean',
+            'image' => 'required|url',
+            'description' => 'required|string',
+        ]);
 
         $livre = new Livre();
         $livre->titre = $request->titre;
@@ -37,6 +37,7 @@ class LivreController extends Controller
         $livre->auteur = $request->auteur;
         $livre->isbn = $request->isbn;
         $livre->editeur = $request->editeur;
+        // $livre->categorie_id = $reaffichageIdeequest->categorie_id;
         $livre->categorie_id = $request->categorie_id;
         $livre->rayon_id = $request->rayon_id;
         $livre->disponibilite = $request->disponibilite;
@@ -60,7 +61,7 @@ class LivreController extends Controller
         $livre->auteur = $request->auteur;
         $livre->isbn = $request->isbn;
         $livre->editeur = $request->editeur; 
-        $livre->categorie_id = $request->categorie_id;
+        $livre->categorie_id = $request->categorie_id;  
         $livre->rayon_id = $request->rayon_id;
         $livre->disponibilite = $request->disponibilite;
         $livre->image = $request->image;

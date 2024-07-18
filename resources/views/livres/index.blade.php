@@ -96,14 +96,14 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Accueil</a>
+                        {{-- <a class="nav-link active" href="#">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Bibliothèque</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Catégorie</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link btn-signup" href="login">S'inscrire</a>
                     </li>
