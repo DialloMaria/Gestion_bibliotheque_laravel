@@ -96,19 +96,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Accueil</a>
+                        {{-- <a class="nav-link active" href="#">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Bibliothèque</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Catégorie</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link btn-signup" href="login">S'inscrire</a>
                     </li>
                     <li>
-                        
+{{--                         
                         @if (Auth::user())
                         {{Auth::user()->name}}
                         <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
@@ -116,7 +116,7 @@
                             @method('DELETE')
                             <button type="submit" class="btn btn-link">Déconnexion</button>
                         </form>
-                        @endif
+                        @endif --}}
                     </li>
                 </ul>
             </div>
@@ -227,7 +227,7 @@
                         <a href="/detail/{{ $livre->id }}" class="btn btn-custom-details">
                             <i class="fas fa-info-circle"></i> Détails
                         </a>
-                        <a href="/modifierLivre/{{ $livre->id }}" class="btn btn-custom btn-modifier"><i class="bi bi-pencil-square"></i>Modifier</a>
+                        {{-- <a href="/modifierLivre/{{ $livre->id }}" class="btn btn-custom btn-modifier"><i class="bi bi-pencil-square"></i>Modifier</a> --}}
                         {{-- <a href="#" class="btn btn-custom-details">
                             <i class="fas fa-play"></i> Lire
                         </a>
@@ -240,7 +240,7 @@
             </div>
             @endforeach
         </div>
-        <a href="/ajouterLivre" class="btn btn-link mt-3">Ajouter un Nouveau Livre</a>
+        {{-- <a href="/ajouterLivre" class="btn btn-link mt-3">Ajouter un Nouveau Livre</a> --}}
     </div>
 
     <footer class="footer">
