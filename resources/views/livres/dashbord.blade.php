@@ -7,6 +7,58 @@
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
    <style>
+
+
+:root {
+            --primary-color: #b15633;
+            --secondary-color: #ff6137;
+            --bg-color: #f8f9fa;
+            --text-color: #555;
+            --light-text-color: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding-top: 20px;
+        }
+
+        .sidebar h3 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: var(--light-text-color);
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: var(--secondary-color);
+            border-bottom-right-radius: 40px;
+        }
        body {
            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
            margin: 0;
@@ -39,6 +91,25 @@
        .nav-link:hover {
            color: #ff6137;
        }
+
+       .social-icons a {
+            color: var(--light-text-color);
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: var(--secondary-color);
+        }
        .btn-signup {
            background-color: #b15633;
            color: white;
@@ -115,11 +186,55 @@
        .stats-icon {
            font-size: 3rem;
        }
+       .add-category-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #b15633;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: background-color 0.3s ease;
+        }
+        .add-category-btn:hover {
+            background-color: #e54c30;
+        }
    </style>
 </head>
 <body>
 
-   <nav class="navbar navbar-expand-lg">
+            <!-- Top Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarProfile" aria-controls="navbarProfile" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarProfile">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  {{-- <i class="fas fa-user"></i>  --}}
+                                  {{ auth()->user()->name }}
+                                  
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Paramètres</a></li>
+                                    <li>
+                                        <form action="{{ route('logout') }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="dropdown-item">Déconnexion</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+   {{-- <nav class="navbar navbar-expand-lg">
        <div class="container">
            <a class="navbar-brand" href="#">
               <h1 style="color:#9e4e2e;" ><strong> KITABI</strong></h1>
@@ -139,20 +254,20 @@
                    <li class="nav-item">
                        <a class="nav-link" href="#">Catégorie</a>
                    </li> --}}
-                   <li>
-                       @if (Auth::user())
+                    <li>
+                       {{-- @if (Auth::user())
                        {{ Auth::user()->name }}
                        <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
                            @csrf
                            @method('DELETE')
-                           <button type="submit" class="btn btn-link">Déconnexion</button>
+                           <button type="submit" class="btn btn-link">Déconnexion deconnexion</button>
                        </form>
-                       @endif
-                   </li>
+                       @endif --}}
+                      </li>
                </ul>
            </div>
        </div>
-   </nav>
+   
 
    <div class="top-bar">
        <div class="container">
@@ -170,25 +285,45 @@
        </div>
    </div>
 
-   <div class="sidebar">
+    <div class="sidebar">
+        <h3>BIBLIOTHÉQUE</h3>
+        <ul>
+            <li><a href="/admin"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+            <li><a href="/listeCategorie"><i class="fas fa-tags"></i>Categorie   </a></li>
+            <li><a href="listeRayon"><i class="fas fa-shelf"></i> Rayon</a></li>
+            <li>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                @method('DELETE')
+               <button type="submit"class="fas fa-sign-out-alt"></button>
+            </form>
+            </li>
+        </ul>
+    </div>
+
+
+   {{-- <div class="sidebar">
        <a class="active" href="#"><i class="fas fa-tachometer-alt"></i> Tableau de Bord</a>
        <a href="#"><i class="fas fa-book"></i> Livres</a>
        <a href="#"><i class="fas fa-users"></i> Utilisateurs</a>
        <a href="/ajouterLivre"><i class="fas fa-chart-line"></i> Ajouter un Nouveau Livre</a>
        <a href="#"><i class="fas fa-cog"></i> Paramètres</a>
-       {{-- @if (Auth::user())
+       @if (Auth::user())
        {{ Auth::user()->name }}
        <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
            @csrf
            @method('DELETE')
            <button type="submit" class="fas fa-sign-out-alt">Déconnexion</button>
        </form>
-       @endif --}}
-   </div>
+       @endif 
+   </div> --}}
 
    <div class="main-content">
        <div class="container my-5">
            <h2 class="text-center">Nos livres</h2>
+           <a href="/ajouterLivre" class="add-category-btn">
+            <i class="fas fa-plus"></i> Ajouter un livre
+        </a>
            <div class="row row-cols-1 row-cols-md-5 g-4">
                @foreach ($livres as $livre)
                <div class="col book-card">
@@ -213,5 +348,4 @@
                </div>
                @endforeach
            </div>
-           <a href="/ajouterLivre" class="btn btn-link mt-3">Ajouter un Nouveau
             

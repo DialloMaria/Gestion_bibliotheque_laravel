@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to right, #ff6137, #71b7e6);
+            /* background: linear-gradient(to right, #ff6137, #71b7e6); */
             font-family: sans-serif;
             display: flex;
             justify-content: center;
@@ -54,14 +54,22 @@
         .btn-primary:hover {
             background: linear-gradient(135deg, #ff6137, #71b7e6);
         }
+        .btn-custom {
+            background-color: #b15633;
+            color: white;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #ff6137;
+        }
     </style>
 </head>
 <body>
-php
-Copy code
 <div class="container">
     <h2>Ajouter un Livre</h2>
-
     <form action="/ajouterLivre/traitement" method="POST">
         @csrf
         <div class="row mb-3">
@@ -163,6 +171,8 @@ Copy code
             <button type="submit" class="btn btn-custom btn-supprimer"><i class="bi bi-trash"></i>Supprimer</button>
         </form> --}}
     </div>
-    <a href="/" class="btn btn-link mt-3">Retour</a>
+    <a href="/admin" class="btn btn-custom">
+        <i class="fas fa-arrow-left"></i> Retour
+    </a>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

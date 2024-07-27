@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Rayon;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 
 class RayonController extends Controller
@@ -28,7 +29,8 @@ class RayonController extends Controller
 
     public function ListeRayon(){
         $rayon= Rayon::all();
-        return view('/rayons/listeRayon', compact('rayon'));
+        $categories= Categorie::all();
+        return view('/rayons/listeRayon', compact('rayon','categories'));
     }
 
     public function SupprimerRayon($id){

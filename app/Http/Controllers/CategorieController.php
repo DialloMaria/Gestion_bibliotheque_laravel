@@ -23,13 +23,13 @@ class CategorieController extends Controller
         $categorie->description = $request->description;
         
         $categorie->save();
-        return redirect('/ajouterCategorie');
+        return redirect('/listeCategorie');
 
     }
 
     public function ListeCategorie(){
-        $categorie= Categorie::all();
-        return view('/categories/listeCategorie', compact('categorie'));
+        $categories= Categorie::all();
+        return view('/categories/listeCategorie', compact('categories'));
     }
 
     public function SupprimerCategorie($id){

@@ -25,13 +25,25 @@
         font-weight: bold;
     }
     .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
+        background-color: #b15633;
+        border-color: #b15633;
     }
     .btn-primary:hover {
-        background-color: #0056b3;
-        border-color: #0056b3;
+        background-color: #b15633;
+        border-color: #b15633;
     }
+
+    .btn-custom {
+            background-color: #b15633;
+            color: white;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #ff6137;
+        }
 </style>
 
 <body>
@@ -51,6 +63,9 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Ajouter</button>
             </form>
+            <a href="/listeRayon" class="btn btn-custom">
+                <i class="fas fa-arrow-left"></i> Retour
+            </a>
         </div>
     </div>
 
