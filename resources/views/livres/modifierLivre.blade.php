@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to right, #ff6137, #71b7e6);
+            background: linear-gradient(to right, #b15633, #575d63); 
             font-family: sans-serif;
             display: flex;
             justify-content: center;
@@ -45,14 +45,14 @@
         .btn-primary {
             width: 100%;
             border-radius: 10px;
-            background: linear-gradient(135deg, #71b7e6, #ff6137);
+            background: #b15633;
             border: none;
             padding: 10px;
             font-size: 1rem;
             transition: background 0.3s;
         }
         .btn-primary:hover {
-            background: linear-gradient(135deg, #ff6137, #71b7e6);
+            background: linear-gradient(to right, #575d63, #b15633); 
         }
         .btn-custom {
             background-color: #b15633;
